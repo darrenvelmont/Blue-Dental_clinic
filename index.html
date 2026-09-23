@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blue Shine Dental Clinic — Creating Healthy Smiles | Rohini, Delhi</title>
+  <meta name="description" content="Blue Shine Dental Clinic, Sector 24 Rohini, Delhi. Multi-speciality dental care by Dr. Pravesh (MDS) & Dr. Prerna (BDS). 5.0★ from 387 Google reviews. Open 10 AM–7 PM, Tuesdays closed." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%238C9A84'/%3E%3Cpath d='M16 7l2 5 5 2-5 2-2 5-2-5-5-2 5-2 2-5z' fill='%23F9F8F4'/%3E%3C/svg%3E" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            alabaster: "#F9F8F4",
+            forest: "#2D3A31",
+            sage: "#8C9A84",
+            clay: "#DCCFC2",
+            claylight: "#F2F0EB",
+            stone: "#E6E2DA",
+            terracotta: "#C27B66",
+          },
+          fontFamily: {
+            display: ['"Playfair Display"', "serif"],
+            body: ['"Source Sans 3"', "sans-serif"],
+          },
+          boxShadow: {
+            soft: "0 4px 6px -1px rgba(45, 58, 49, 0.05)",
+            medium: "0 10px 15px -3px rgba(45, 58, 49, 0.05)",
+            large: "0 20px 40px -10px rgba(45, 58, 49, 0.05)",
+            bloom: "0 25px 50px -12px rgba(45, 58, 49, 0.15)",
+          },
+        },
+      },
+    };
+  </script>
+
+  <!-- Lucide icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
+  <style>
+    body { font-family: "Source Sans 3", sans-serif; background-color: #F9F8F4; color: #2D3A31; }
+
+    /* ---- Paper grain (the soul of the design) ---- */
+    .grain {
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+      background-repeat: repeat;
+    }
+
+    /* ---- Gentle scroll reveal ---- */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+    .reveal.is-in { opacity: 1; transform: translateY(0); }
+    .d1 { transition-delay: 0.1s; } .d2 { transition-delay: 0.2s; }
+    .d3 { transition-delay: 0.3s; } .d4 { transition-delay: 0.4s; }
+
+    /* ---- Mobile menu slide-in ---- */
+    #mobileMenu { transform: translateY(-12px); opacity: 0; pointer-events: none; transition: transform 0.5s ease-out, opacity 0.5s ease-out; }
+    #mobileMenu.open { transform: translateY(0); opacity: 1; pointer-events: auto; }
+
+    /* ---- Accessible focus ---- */
+    a:focus-visible, button:focus-visible { outline: 2px solid #8C9A84; outline-offset: 3px; border-radius: 9999px; }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .reveal { opacity: 1; transform: none; transition: none; }
+      #mobileMenu { transition: none; }
+    }
+  </style>
+</head>
+
+<body class="bg-alabaster text-forest antialiased selection:bg-sage/30">
+
+  <!-- Paper grain overlay -->
+  <div class="grain pointer-events-none fixed inset-0 z-50 opacity-[0.015]" aria-hidden="true"></div>
+
+  <!-- ======================= NAV ======================= -->
+  <header class="fixed inset-x-0 top-0 z-40 border-b border-stone/80 bg-alabaster/80 backdrop-blur-sm">
+    <nav class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8 md:h-20" aria-label="Main">
+      <a href="#top" class="flex items-center gap-3">
+        <span class="flex h-9 w-9 items-center justify-center rounded-full bg-sage/20">
+          <i data-lucide="sparkles" class="h-4 w-4 text-forest"></i>
+        </span>
+        <span class="font-display text-xl font-semibold tracking-tight">Blue Shine <em class="font-medium italic text-sage">Dental</em></span>
+      </a>
+
+      <div class="hidden items-center gap-8 md:flex">
+        <a href="#about" class="text-sm uppercase tracking-widest text-forest/70 transition-colors duration-300 hover:text-terracotta">About</a>
+        <a href="#services" class="text-sm uppercase tracking-widest text-forest/70 transition-colors duration-300 hover:text-terracotta">Services</a>
+        <a href="#reviews" class="text-sm uppercase tracking-widest text-forest/70 transition-colors duration-300 hover:text-terracotta">Reviews</a>
+        <a href="#visit" class="text-sm uppercase tracking-widest text-forest/70 transition-colors duration-300 hover:text-terracotta">Visit Us</a>
+        <a href="tel:+919599582158" class="inline-flex h-11 items-center gap-2 rounded-full bg-forest px-6 text-sm uppercase tracking-widest text-white shadow-medium transition-all duration-300 hover:bg-terracotta hover:shadow-large">
+          <i data-lucide="phone" class="h-4 w-4"></i> Book a Visit
+        </a>
+      </div>
+
+      <button id="menuBtn" class="flex h-11 w-11 items-center justify-center rounded-full border border-stone bg-white/60 md:hidden" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span id="menuIconOpen"><i data-lucide="menu" class="h-5 w-5"></i></span>
+        <span id="menuIconClose" class="hidden"><i data-lucide="x" class="h-5 w-5"></i></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- Mobile menu overlay -->
+  <div id="mobileMenu" class="fixed inset-0 z-30 flex flex-col justify-center bg-alabaster/[0.98] px-8 backdrop-blur-sm md:hidden">
+    <nav class="flex flex-col gap-6 text-center" aria-label="Mobile">
+      <a href="#about" class="font-display text-3xl font-medium">About</a>
+      <a href="#services" class="font-display text-3xl font-medium">Services</a>
+      <a href="#reviews" class="font-display text-3xl font-medium">Reviews</a>
+      <a href="#visit" class="font-display text-3xl font-medium">Visit Us</a>
+      <div class="mt-6 flex flex-col gap-4">
+        <a href="tel:+919599582158" class="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-forest text-sm uppercase tracking-widest text-white">
+          <i data-lucide="phone" class="h-4 w-4"></i> Call 95995 82158
+        </a>
+        <a href="https://maps.app.goo.gl/WhoQSyBRzLtf3pNo8" target="_blank" rel="noopener" class="inline-flex h-12 items-center justify-center gap-2 rounded-full border border-sage text-sm uppercase tracking-widest text-sage">
+          <i data-lucide="map-pin" class="h-4 w-4"></i> Google Maps
+        </a>
+      </div>
+    </nav>
+  </div>
+
+  <main id="top">
+
+    <!-- ======================= HERO ======================= -->
+    <section class="relative overflow-hidden px-4 pt-28 sm:px-6 md:pt-40 lg:px-8">
+      <!-- soft arch behind everything -->
+      <div class="pointer-events-none absolute -top-40 left-1/2 -z-10 h-[34rem] w-[54rem] -translate-x-1/2 rounded-t-full bg-claylight" aria-hidden="true"></div>
+
+      <div class="mx-auto max-w-7xl text-center">
+        <div class="reveal">
+          <p class="font-body text-xs uppercase tracking-[0.35em] text-sage md:text-sm">Blue Shine Dental Clinic</p>
+          <p class="mt-2 text-sm text-forest/50">ब्लू शाइन डेंटल क्लिनिक · Sector 24, Rohini, New Delhi</p>
+        </div>
+
+        <h1 class="reveal d1 mx-auto mt-6 max-w-4xl font-display text-5xl font-semibold leading-[1.05] tracking-tight sm:text-6xl md:text-7xl lg:text-8xl">
+          Creating <em class="font-medium italic text-terracotta">Healthy</em><br class="hidden sm:block" /> Smiles, Gently
+        </h1>
+
+        <p class="reveal d2 mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-forest/70">
+          A multi-speciality neighbourhood clinic where calm, unhurried care meets clinical excellence —
+          from your child's very first check-up to a complete smile restoration.
+        </p>
+
+        <!-- Rating pill -->
+        <div class="reveal d3 mt-8 inline-flex items-center gap-3 rounded-full border border-stone bg-white/70 px-6 py-3 shadow-soft backdrop-blur-sm">
+          <span class="flex items-center gap-0.5" aria-label="Rated 5 out of 5">
+            <svg viewBox="0 0 24 24" class="h-4 w-4 fill-terracotta" aria-hidden="true"><path d="M12 2l2.9 6.26 6.85.59-5.2 4.5 1.56 6.7L12 16.4 5.89 20.05l1.56-6.7-5.2-4.5 6.85-.59L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" class="h-4 w-4 fill-terracotta" aria-hidden="true"><path d="M12 2l2.9 6.26 6.85.59-5.2 4.5 1.56 6.7L12 16.4 5.89 20.05l1.56-6.7-5.2-4.5 6.85-.59L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" class="h-4 w-4 fill-terracotta" aria-hidden="true"><path d="M12 2l2.9 6.26 6.85.59-5.2 4.5 1.56 6.7L12 16.4 5.89 20.05l1.56-6.7-5.2-4.5 6.85-.59L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" class="h-4 w-4 fill-terracotta" aria-hidden="true"><path d="M12 2l2.9 6.26 6.85.59-5.2 4.5 1.56 6.7L12 16.4 5.89 20.05l1.56-6.7-5.2-4.5 6.85-.59L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" class="h-4 w-4 fill-terracotta" aria-hidden="true"><path d="M12 2l2.9 6.26 6.85.59-5.2 4.5 1.56 6.7L12 16.4 5.89 20.05l1.56-6.7-5.2-4.5 6.85-.59L12 2z"/></svg>
+          </span>
+          <span class="font-display text-lg font-semibold">5.0</span>
+          <span class="h-4 w-px bg-stone" aria-hidden="true"></span>
+          <span class="text-sm text-forest/60">387 Google reviews</span>
+        </div>
+
+        <!-- ============ STOREFRONT PHOTO ============ -->
+        <div class="reveal d3 relative mx-auto mt-16 max-w-4xl md:mt-20">
+          <!-- decorative offset rectangle behind photo -->
+          <div class="absolute -right-4 -top-6 -z-10 hidden h-full w-full border border-sage/40 sm:block md:-right-8" aria-hidden="true"></div>
+          <div class="absolute -bottom-6 -left-4 -z-10 hidden h-40 w-40 rounded-full bg-clay/50 blur-2xl sm:block md:-left-8" aria-hidden="true"></div>
+
+          <figure class="group relative overflow-hidden border border-stone shadow-bloom">
+            <img
+              src="assets/clinic-storefront.jpg"
+              alt="Blue Shine Dental Clinic storefront in Sector 24, Rohini — blue signage with 'Creating Healthy Smiles' tagline"
+              class="aspect-[16/9] w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+              width="1600" height="883"
+            />
+            <!-- hours chip -->
+            <figcaption class="absolute bottom-4 left-4 flex items-center gap-2 rounded-2xl bg-white/90 px-4 py-2 text-xs font-medium shadow-soft backdrop-blur-sm md:bottom-6 md:left-6">
+              <i data-lucide="clock" class="h-4 w-4 text-sage"></i>
+              Open daily 10 AM – 7 PM · Tuesdays closed
+            </figcaption>
+          </figure>
+
+          <!-- rating chip -->
+          <div class="absolute -top-5 right-4 hidden items-center gap-2 rounded-full bg-white/95 px-4 py-2 shadow-soft backdrop-blur-sm sm:flex md:right-8">
+            <svg viewBox="0 0 24 24" class="h-4 w-4 fill-terracotta" aria-hidden="true"><path d="M12 2l2.9 6.26 6.85.59-5.2 4.5 1.56 6.7L12 16.4 5.89 20.05l1.56-6.7-5.2-4.5 6.85-.59L12 2z"/></svg>
+            <span class="text-sm font-semibold">5.0 · 387 reviews</span>
+          </div>
+        </div>
+
+        <!-- ============ GOOGLE MAPS BUTTON — right below the photo ============ -->
+        <div class="reveal d4 mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+          <a
+            href="https://maps.app.goo.gl/WhoQSyBRzLtf3pNo8"
+            target="_blank"
+            rel="noopener"
+            class="inline-flex h-12 items-center gap-3 rounded-full bg-forest px-8 text-sm uppercase tracking-widest text-white shadow-medium transition-all duration-300 hover:bg-terracotta hover:shadow-large"
+          >
+            <i data-lucide="map-pin" class="h-4 w-4"></i>
+            Open in Google Maps
+          </a>
+          <a
+            href="tel:+919599582158"
+            class="inline-flex h-12 items-center gap-3 rounded-full border border-sage px-8 text-sm uppercase tracking-widest text-sage transition-colors duration-300 hover:bg-sage/10"
+          >
+            <i data-lucide="phone" class="h-4 w-4"></i>
+            Call 95995 82158
+          </a>
+        </div>
+        <p class="reveal d4 mt-5 text-sm text-forest/50">
+          260-261, Pocket 8, Sector 24, Rohini, Delhi 110085 · Plus code P3HP+MC
+        </p>
+      </div>
+
+      <!-- meandering vine divider -->
+      <svg viewBox="0 0 1440 96" fill="none" class="mx-auto mt-20 h-14 w-full max-w-7xl text-sage/50 md:mt-28" aria-hidden="true" preserveAspectRatio="none">
+        <path d="M0 48 C 240 -8, 480 104, 720 48 S 1200 -8, 1440 48" stroke="currentColor" stroke-width="1"/>
+        <circle cx="720" cy="48" r="3" fill="currentColor"/>
+        <circle cx="240" cy="17" r="2" fill="currentColor"/>
+        <circle cx="1200" cy="17" r="2" fill="currentColor"/>
+      </svg>
+    </section>
+
+    <!-- ======================= STATS ======================= -->
+    <section class="px-4 py-16 sm:px-6 md:py-24 lg:px-8">
+      <div class="mx-auto grid max-w-7xl grid-cols-2 gap-y-12 md:grid-cols-4">
+        <div class="reveal border-stone px-6 text-center md:border-r">
+          <p class="font-display text-5xl font-semibold md:text-6xl">5.0</p>
+          <p class="mt-3 text-sm uppercase tracking-widest text-forest/60">Google rating</p>
+        </div>
+        <div class="reveal d1 border-stone px-6 text-center md:border-r">
+          <p class="font-display text-5xl font-semibold md:text-6xl">387</p>
+          <p class="mt-3 text-sm uppercase tracking-widest text-forest/60">Verified reviews</p>
+        </div>
+        <div class="reveal d2 border-stone px-6 text-center">
+          <p class="font-display text-5xl font-semibold md:text-6xl">10<span class="italic text-terracotta">+</span></p>
+          <p class="mt-3 text-sm uppercase tracking-widest text-forest/60">Treatments offered</p>
+        </div>
+        <div class="reveal d3 border-stone px-6 text-center">
+          <p class="font-display text-5xl font-semibold md:text-6xl">6<span class="italic text-terracotta">+</span> <span class="text-3xl md:text-4xl">yrs</span></p>
+          <p class="mt-3 text-sm uppercase tracking-widest text-forest/60">Trusted in Rohini</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= ABOUT / DOCTORS ======================= -->
+    <section id="about" class="scroll-mt-24 px-4 py-16 sm:px-6 md:py-32 lg:px-8">
+      <div class="mx-auto grid max-w-7xl items-center gap-16 lg:grid-cols-2">
+        <div>
+          <p class="reveal text-xs uppercase tracking-[0.35em] text-sage md:text-sm">Meet your doctors</p>
+          <h2 class="reveal d1 mt-6 font-display text-4xl font-semibold leading-tight tracking-tight md:text-6xl">
+            A neighbourhood clinic with a <em class="italic text-terracotta">gentle</em> touch
+          </h2>
+          <p class="reveal d2 mt-8 text-lg leading-relaxed text-forest/70">
+            Dr. Pravesh Bhardwaj (MDS) and Dr. Prerna (BDS) lead Blue Shine with the same philosophy:
+            explain everything, work calmly, and treat every patient — especially children — with
+            <em class="font-display italic">utmost care</em>. Families have been returning since 2020.
+          </p>
+          <div class="reveal d3 mt-10 flex items-start gap-4 rounded-3xl border border-stone bg-white/70 p-6 shadow-soft">
+            <i data-lucide="heart-pulse" class="mt-1 h-6 w-6 shrink-0 text-sage"></i>
+            <p class="text-forest/70">
+              Supported by assistant <span class="font-semibold text-forest">Suraj Mishra</span> and
+              <span class="font-semibold text-forest">Manoj Kumar</span> — a team patients describe as
+              "friendly, supportive and excellent."
+            </p>
+          </div>
+        </div>
+
+        <div class="grid gap-8 sm:grid-cols-2">
+          <!-- Dr. Pravesh -->
+          <article class="reveal d1 rounded-3xl border border-stone bg-white p-8 text-center shadow-soft transition-all duration-500 hover:-translate-y-1 hover:shadow-large">
+            <div class="mx-auto flex h-28 w-24 items-end justify-center rounded-t-full bg-claylight pb-4">
+              <span class="font-display text-3xl font-semibold italic text-sage">PB</span>
+            </div>
+            <h3 class="mt-6 font-display text-2xl font-semibold">Dr. Pravesh Bhardwaj</h3>
+            <p class="mt-1 text-sm uppercase tracking-widest text-sage">MDS · Chief Dental Surgeon</p>
+            <p class="mt-4 text-sm leading-relaxed text-forest/60">
+              Expert in child dentistry, root canals and implants — praised by parents for his calm, kind manner.
+            </p>
+          </article>
+          <!-- Dr. Prerna -->
+          <article class="reveal d2 rounded-3xl border border-stone bg-white p-8 text-center shadow-soft transition-all duration-500 hover:-translate-y-1 hover:shadow-large sm:translate-y-8">
+            <div class="mx-auto flex h-28 w-24 items-end justify-center rounded-t-full bg-clay/40 pb-4">
+              <span class="font-display text-3xl font-semibold italic text-forest">P</span>
+            </div>
+            <h3 class="mt-6 font-display text-2xl font-semibold">Dr. Prerna</h3>
+            <p class="mt-1 text-sm uppercase tracking-widest text-sage">BDS · Dental Surgeon</p>
+            <p class="mt-4 text-sm leading-relaxed text-forest/60">
+              Focused on preventive care, cleaning, whitening and everyday family dentistry.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= SERVICES ======================= -->
+    <section id="services" class="scroll-mt-24 px-4 py-16 sm:px-6 md:py-32 lg:px-8">
+      <div class="mx-auto max-w-7xl">
+        <div class="max-w-3xl">
+          <p class="reveal text-xs uppercase tracking-[0.35em] text-sage md:text-sm">Complete dental solutions</p>
+          <h2 class="reveal d1 mt-6 font-display text-4xl font-semibold leading-tight tracking-tight md:text-6xl">
+            Everything your <em class="italic text-terracotta">smile</em> needs, under one roof
+          </h2>
+        </div>
+
+        <div class="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 md:gap-8">
+          <!-- even cards staggered at md+ -->
+          <div class="reveal">
+            <article class="h-full rounded-3xl border border-stone bg-white p-8 shadow-soft transition-all duration-500 hover:-translate-y-1 hover:shadow-large">
+              <span class="flex h-12 w-12 items-center justify-center rounded-full bg-sage/15">
+                <i data-lucide="baby" class="h-5 w-5 text-forest"></i>
+              </span>
+              <h3 class="mt-6 font-display text-2xl font-semibold">Child Dentistry</h3>
+              <p class="mt-3 leading-relaxed text-forest/60">
+                First visits, fluoride and gentle treatment — kids genuinely look forward to coming back.
+              </p>
+            </article>
+          </div>
+          <div class="reveal d1 md:translate-y-12">
+            <article class="h-full rounded-3xl border border-stone bg-white p-8 shadow-soft transition-all duration-500 hover:-translate-y-1 hover:shadow-large">
+              <span class="flex h-12 w-12 items-center justify-center rounded-full bg-sage/15">
+                <i data-lucide="layers" class="h-5 w-5 text-forest"></i>
+              </span>
+              <h3 class="mt-6 font-display text-2xl font-semibold">Dental Implants</h3>
+              <p class="mt-3 leading-relaxed text-forest/60">
+                Permanent, natural-feeling replacements for missing teeth, planned with precision.
+              </p>
+            </article>
+          </div>
+          <div class="reveal d2">
+            <article class="h-full rounded-3xl border border-stone bg-white p-8 shadow-soft transition-all duration-500 hover:-translate-y-1 hover:shadow-large">
+              <span class="flex h-12 w-12 items-center justify-center rounded-full bg-sage/15">
+                <i data-lucide="smile" class="h-5 w-5 text-forest"></i>
+              </span>
+              <h3 class="mt-6 font-display text-2xl font-semibold">Braces &amp; Aligners</h3>
+              <p class="mt-3 leading-relaxed text-forest/60">
+                Orthodontics for children and adults — straighter teeth, healthier bites.
+              </p>
+            </article>
+          </div>
+          <div class="reveal md:translate-y-12">
+            <article class="h-full rounded-3xl border border-stone bg-white p-8 shadow-soft transition-all duration-500 hover:-translate-y-1 hover:shadow-large">
+              <span class="flex h-12 w-12 items-center justify-center rounded-full bg-sage/15">
+                <i data-lucide="activity" class="h-5 w-5 text-forest"></i>
+              </span>
+              <h3 class="mt-6 font-display text-2xl font-semibold">Root Canal Treatment</h3>
+              <p class="mt-3 leading-relaxed text-forest/60">
+                Calm, pain-managed endodontic care that saves your natural tooth.
+              </p>
+            </article>
+          </div>
+          <div class="reveal d1">
+            <article class="h-full rounded-3xl border border-stone bg-white p-8 shadow-soft transition-all duration-500 hover:-translate-y-1 hover:shadow-large">
+              <span class="flex h-12 w-12 items-center justify-center rounded-full bg-sage/15">
+                <i data-lucide="shield-check" class="h-5 w-5 text-forest"></i>
+              </span>
+              <h3 class="mt-6 font-display text-2xl font-semibold">Crowns &amp; Fillings</h3>
+              <p class="mt-3 leading-relaxed text-forest/60">
+                Durable, tooth-coloured restorations done carefully and comfortably.
+              </p>
+            </article>
+          </div>
+          <div class="reveal d2 md:translate-y-12">
+            <article class="h-full rounded-3xl border border-stone bg-white p-8 shadow-soft transition-all duration-500 hover:-translate-y-1 hover:shadow-large">
+              <span class="flex h-12 w-12 items-center justify-center rounded-full bg-sage/15">
+                <i data-lucide="sparkles" class="h-5 w-5 text-forest"></i>
+              </span>
+              <h3 class="mt-6 font-display text-2xl font-semibold">Cleaning &amp; Whitening</h3>
+              <p class="mt-3 leading-relaxed text-forest/60">
+                Hygienic scaling, polishing and whitening for a bright, healthy shine.
+              </p>
+            </article>
+          </div>
+        </div>
+
+        <div class="reveal mt-16 flex flex-wrap items-center justify-center gap-3 md:mt-24">
+          <span class="text-sm uppercase tracking-widest text-forest/50">Also offered</span>
+          <span class="rounded-full border border-stone bg-claylight px-5 py-2 text-sm text-forest/70">Extractions</span>
+          <span class="rounded-full border border-stone bg-claylight px-5 py-2 text-sm text-forest/70">Dentures</span>
+          <span class="rounded-full border border-stone bg-claylight px-5 py-2 text-sm text-forest/70">Gum Surgery</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= REVIEWS ======================= -->
+    <section id="reviews" class="scroll-mt-24 bg-claylight/60 px-4 py-16 sm:px-6 md:py-32 lg:px-8">
+      <div class="mx-auto max-w-7xl">
+        <div class="mx-auto max-w-3xl text-center">
+          <p class="reveal text-xs uppercase tracking-[0.35em] text-sage md:text-sm">Word of mouth</p>
+          <h2 class="reveal d1 mt-6 font-display text-4xl font-semibold leading-tight tracking-tight md:text-6xl">
+            Loved by <em class="italic text-terracotta">families</em> across Rohini
+          </h2>
+          <p class="reveal d2 mt-6 text-lg text-forest/70">
+            A perfect 5.0 from 387 Google reviews — here is what patients say.
+          </p>
+        </div>
+
+        <div class="mt-16 grid grid-cols-1 gap-8 md:grid-cols-3">
+          <article class="reveal flex h-full flex-col rounded-3xl border border-stone bg-white p-8 shadow-soft transition-all duration-500 hover:-translate-y-1 hover:shadow-large">
+            <i data-lucide="quote" class="h-6 w-6 text-clay"></i>
+            <div class="mt-4 flex gap-0.5" aria-label="5 stars">
+              <svg viewBox="0 0 24 24" class="h-4 w-4 fill-terracotta" aria-hidden="true"><path d="M12 2l2.9 6.26 6.85.59-5.2 4.5 1.56 6.7L12 16.4 5.89 20.05l1.56-6.7-5.2-4.5 6.85-.59L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" class="h-4 w-4 fill-terracotta" aria-hidden="true"><path d="M12 2l2.9 6.26 6.85.59-5.2 4.5 1.56 6.7L12 16.4 5.89 20.05l1.56-6.7-5.2-4.5 6.85-.59L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" class="h-4 w-4 fill-terracotta" aria-hidden="true"><path d="M12 2l2.9 6.26 6.85.59-5.2 4.5 1.56 6.7L12 16.4 5.89 20.05l1.56-6.7-5.2-4.5 6.85-.59L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" class="h-4 w-4 fill-terracotta" aria-hidden="true"><path d="M12 2l2.9 6.26 6.85.59-5.2 4.5 1.56 6.7L12 16.4 5.89 20.05l1.56-6.7-5.2-4.5 6.85-.59L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" class="h-4 w-4 fill-terracotta" aria-hidden="true"><path d="M12 2l2.9 6.26 6.85.59-5.2 4.5 1.56 6.7L12 16.4 5.89 20.05l1.56-6.7-5.2-4.5 6.85-.59L12 2z"/></svg>
+            </div>
+            <p class="mt-5 flex-1 font-display text-lg italic leading-relaxed text-forest/80">
+              "Dr. Parvesh has excellent experience. He performs teeth cleaning and filling very well.
+              They treat children very well and the team takes excellent care of their patients."
+            </p>
+            <footer class="mt-6">
+              <p class="font-semibold">Ashok Yadav</p>
+              <p class="text-sm text-forest/50">Google review · a month ago</p>
+            </footer>
+          </article>
+
+          <article class="reveal d1 flex h-full flex-col rounded-3xl border border-stone bg-white p-8 shadow-soft transition-all duration-500 hover:-translate-y-1 hover:shadow-large">
+            <i data-lucide="quote" class="h-6 w-6 text-clay"></i>
+            <div class="mt-4 flex gap-0.5" aria-label="5 stars">
+              <svg viewBox="0 0 24 24" class="h-4 w-4 fill-terracotta" aria-hidden="true"><path d="M12 2l2.9 6.26 6.85.59-5.2 4.5 1.56 6.7L12 16.4 5.89 20.05l1.56-6.7-5.2-4.5 6.85-.59L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" class="h-4 w-4 fill-terracotta" aria-hidden="true"><path d="M12 2l2.9 6.26 6.85.59-5.2 4.5 1.56 6.7L12 16.4 5.89 20.05l1.56-6.7-5.2-4.5 6.85-.59L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" class="h-4 w-4 fill-terracotta" aria-hidden="true"><path d="M12 2l2.9 6.26 6.85.59-5.2 4.5 1.56 6.7L12 16.4 5.89 20.05l1.56-6.7-5.2-4.5 6.85-.59L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" class="h-4 w-4 fill-terracotta" aria-hidden="true"><path d="M12 2l2.9 6.26 6.85.59-5.2 4.5 1.56 6.7L12 16.4 5.89 20.05l1.56-6.7-5.2-4.5 6.85-.59L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" class="h-4 w-4 fill-terracotta" aria-hidden="true"><path d="M12 2l2.9 6.26 6.85.59-5.2 4.5 1.56 6.7L12 16.4 5.89 20.05l1.56-6.7-5.2-4.5 6.85-.59L12 2z"/></svg>
+            </div>
+            <p class="mt-5 flex-1 font-display text-lg italic leading-relaxed text-forest/80">
+              "I had a wonderful experience at Blue Shine Dental Clinic. Dr. Pravesh is a very experienced
+              and skilled doctor, and his assistant Mr. Suraj is extremely supportive and friendly."
+            </p>
+            <footer class="mt-6">
+              <p class="font-semibold">Rajni</p>
+              <p class="text-sm text-forest/50">Google review · 7 months ago</p>
+            </footer>
+          </article>
+
+          <article class="reveal d2 flex h-full flex-col rounded-3xl border border-stone bg-white p-8 shadow-soft transition-all duration-500 hover:-translate-y-1 hover:shadow-large">
+            <i data-lucide="quote" class="h-6 w-6 text-clay"></i>
+            <div class="mt-4 flex gap-0.5" aria-label="5 stars">
+              <svg viewBox="0 0 24 24" class="h-4 w-4 fill-terracotta" aria-hidden="true"><path d="M12 2l2.9 6.26 6.85.59-5.2 4.5 1.56 6.7L12 16.4 5.89 20.05l1.56-6.7-5.2-4.5 6.85-.59L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" class="h-4 w-4 fill-terracotta" aria-hidden="true"><path d="M12 2l2.9 6.26 6.85.59-5.2 4.5 1.56 6.7L12 16.4 5.89 20.05l1.56-6.7-5.2-4.5 6.85-.59L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" class="h-4 w-4 fill-terracotta" aria-hidden="true"><path d="M12 2l2.9 6.26 6.85.59-5.2 4.5 1.56 6.7L12 16.4 5.89 20.05l1.56-6.7-5.2-4.5 6.85-.59L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" class="h-4 w-4 fill-terracotta" aria-hidden="true"><path d="M12 2l2.9 6.26 6.85.59-5.2 4.5 1.56 6.7L12 16.4 5.89 20.05l1.56-6.7-5.2-4.5 6.85-.59L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" class="h-4 w-4 fill-terracotta" aria-hidden="true"><path d="M12 2l2.9 6.26 6.85.59-5.2 4.5 1.56 6.7L12 16.4 5.89 20.05l1.56-6.7-5.2-4.5 6.85-.59L12 2z"/></svg>
+            </div>
+            <p class="mt-5 flex-1 font-display text-lg italic leading-relaxed text-forest/80">
+              "He has excellent command on his work and works very calmly. I have been visiting him since
+              2020 — first for my 2.5-year-old son's dental treatment. He is an expert with children."
+            </p>
+            <footer class="mt-6">
+              <p class="font-semibold">Pawan Mohta</p>
+              <p class="text-sm text-forest/50">Google review · 7 months ago</p>
+            </footer>
+          </article>
+        </div>
+
+        <div class="reveal d3 mt-12 text-center">
+          <a
+            href="https://maps.app.goo.gl/WhoQSyBRzLtf3pNo8"
+            target="_blank"
+            rel="noopener"
+            class="group inline-flex items-center gap-2 text-sm uppercase tracking-widest text-sage transition-colors duration-300 hover:text-terracotta"
+          >
+            Read all 387 reviews on Google
+            <i data-lucide="arrow-right" class="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= VISIT ======================= -->
+    <section id="visit" class="scroll-mt-24 px-4 py-16 sm:px-6 md:py-32 lg:px-8">
+      <div class="mx-auto max-w-7xl">
+        <div class="max-w-3xl">
+          <p class="reveal text-xs uppercase tracking-[0.35em] text-sage md:text-sm">Plan your visit</p>
+          <h2 class="reveal d1 mt-6 font-display text-4xl font-semibold leading-tight tracking-tight md:text-6xl">
+            Come say <em class="italic text-terracotta">hello</em>
+          </h2>
+        </div>
+
+        <div class="mt-16 grid grid-cols-1 gap-8 lg:grid-cols-2">
+          <!-- Timings -->
+          <div class="reveal rounded-3xl border border-stone bg-white p-8 shadow-soft md:p-10">
+            <div class="flex items-center gap-3">
+              <i data-lucide="clock" class="h-5 w-5 text-sage"></i>
+              <h3 class="font-display text-2xl font-semibold">Clinic timings</h3>
+            </div>
+            <dl class="mt-8 space-y-4">
+              <div class="flex items-center justify-between border-b border-stone pb-4">
+                <dt class="text-forest/70">Monday – Saturday</dt>
+                <dd class="font-semibold">10:00 AM – 7:00 PM</dd>
+              </div>
+              <div class="flex items-center justify-between border-b border-stone pb-4">
+                <dt class="text-forest/70">Sunday</dt>
+                <dd class="font-semibold">10:00 AM – 7:00 PM</dd>
+              </div>
+              <div class="flex items-center justify-between">
+                <dt class="text-forest/70">Tuesday</dt>
+                <dd class="font-display italic text-terracotta">Closed</dd>
+              </div>
+            </dl>
+            <p class="mt-8 flex items-start gap-3 rounded-2xl bg-claylight p-4 text-sm text-forest/60">
+              <i data-lucide="calendar-x" class="mt-0.5 h-4 w-4 shrink-0 text-sage"></i>
+              Timings may vary on holidays — a quick call before you visit is always a good idea.
+            </p>
+          </div>
+
+          <!-- Find us -->
+          <div class="reveal d1 flex flex-col rounded-[40px] bg-forest p-8 text-alabaster shadow-bloom md:p-10">
+            <div class="flex items-center gap-3">
+              <i data-lucide="map-pin" class="h-5 w-5 text-sage"></i>
+              <h3 class="font-display text-2xl font-semibold">Find us</h3>
+            </div>
+            <p class="mt-8 text-lg leading-relaxed text-alabaster/80">
+              Blue Shine Dental Clinic<br />
+              260-261, Pocket 8, Sector 24,<br />
+              Rohini, Delhi — 110085
+            </p>
+            <p class="mt-4 text-sm text-alabaster/50">Plus code: P3HP+MC Delhi</p>
+
+            <div class="mt-8 space-y-3">
+              <a href="tel:+919599582158" class="flex items-center gap-3 text-alabaster/80 transition-colors duration-300 hover:text-white">
+                <i data-lucide="phone" class="h-4 w-4 text-sage"></i> 95995 82158 <span class="text-sm text-alabaster/40">· Dr. Pravesh</span>
+              </a>
+              <a href="tel:+918826682170" class="flex items-center gap-3 text-alabaster/80 transition-colors duration-300 hover:text-white">
+                <i data-lucide="phone" class="h-4 w-4 text-sage"></i> 88266 82170 <span class="text-sm text-alabaster/40">· Dr. Prerna</span>
+              </a>
+            </div>
+
+            <div class="mt-auto flex flex-col gap-4 pt-10 sm:flex-row">
+              <a
+                href="https://maps.app.goo.gl/WhoQSyBRzLtf3pNo8"
+                target="_blank"
+                rel="noopener"
+                class="inline-flex h-12 flex-1 items-center justify-center gap-3 rounded-full bg-alabaster px-8 text-sm uppercase tracking-widest text-forest transition-all duration-300 hover:bg-terracotta hover:text-white"
+              >
+                <i data-lucide="navigation" class="h-4 w-4"></i>
+                Get Directions
+              </a>
+              <a
+                href="tel:+919599582158"
+                class="inline-flex h-12 items-center justify-center gap-3 rounded-full border border-alabaster/30 px-8 text-sm uppercase tracking-widest text-alabaster/80 transition-colors duration-300 hover:border-sage hover:text-white"
+              >
+                Call Now
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ======================= FOOTER ======================= -->
+  <footer class="border-t border-stone px-4 py-12 sm:px-6 lg:px-8">
+    <div class="mx-auto flex max-w-7xl flex-col items-center gap-8 text-center md:flex-row md:justify-between md:text-left">
+      <div>
+        <p class="font-display text-2xl font-semibold">Blue Shine <em class="italic text-sage">Dental</em></p>
+        <p class="mt-1 text-sm text-forest/50">ब्लू शाइन डेंटल क्लिनिक · Multi Speciality Centre</p>
+      </div>
+      <nav class="flex flex-wrap items-center justify-center gap-6 text-sm uppercase tracking-widest text-forest/60" aria-label="Footer">
+        <a href="#about" class="transition-colors duration-300 hover:text-terracotta">About</a>
+        <a href="#services" class="transition-colors duration-300 hover:text-terracotta">Services</a>
+        <a href="#reviews" class="transition-colors duration-300 hover:text-terracotta">Reviews</a>
+        <a href="https://maps.app.goo.gl/WhoQSyBRzLtf3pNo8" target="_blank" rel="noopener" class="transition-colors duration-300 hover:text-terracotta">Maps</a>
+      </nav>
+      <p class="text-sm text-forest/40">© <span id="year">2026</span> Blue Shine Dental Clinic</p>
+    </div>
+  </footer>
+
+  <script>
+    // Icons
+    lucide.createIcons({ attrs: { "stroke-width": 1.5 } });
+
+    // Gentle scroll reveals
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-in");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12 }
+    );
+    document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+
+    // Mobile menu
+    const menuBtn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+    const iconOpen = document.getElementById("menuIconOpen");
+    const iconClose = document.getElementById("menuIconClose");
+    function setMenu(open) {
+      mobileMenu.classList.toggle("open", open);
+      menuBtn.setAttribute("aria-expanded", String(open));
+      iconOpen.classList.toggle("hidden", open);
+      iconClose.classList.toggle("hidden", !open);
+      document.body.style.overflow = open ? "hidden" : "";
+    }
+    menuBtn.addEventListener("click", () => setMenu(!mobileMenu.classList.contains("open")));
+    mobileMenu.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => setMenu(false)));
+
+    // Year
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
